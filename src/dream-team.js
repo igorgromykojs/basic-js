@@ -31,9 +31,6 @@ function createDreamTeam(arr) {
   } else {
     return false;
   }
-    
-  
-
 };
 
 // console.log(createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]));
