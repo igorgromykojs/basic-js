@@ -14,7 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(arr) {
-
+  if ( Array.isArray(arr)) {
     let team = "";
     let names = arr.filter(function (name) {
       return typeof (name) === 'string';
@@ -28,6 +28,10 @@ function createDreamTeam(arr) {
     } else {
       return team;
     }
+  } else {
+    return false;
+  }
+    
   
 
 };
