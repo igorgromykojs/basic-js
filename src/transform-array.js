@@ -24,9 +24,19 @@ function transform(arr) {
       } else if (arr[i] == '--discard-prev') {
         newArr.pop();
       } else if (arr[i] == '--double-next') {
-        newArr.push(arr[i+1]);
+        if (i == arr.length - 1 ){
+          i=arr.length - 1;
+        } else {
+          newArr.push(arr[i+1]);
+        }
+        
       } else if (arr[i] == '--double-prev'){
-        newArr.push(arr[i-1]);
+        if (i == 0){
+          i=0;
+        } else {
+          newArr.push(arr[i-1]);
+        }
+        
       }
     }
     return newArr;
@@ -34,7 +44,7 @@ function transform(arr) {
     return "'arr' parameter must be an instance of the Array!";
   }
 }
-// console.log(transform('--double-next'));
+// console.log(transform([ 5, '--discard-next', 4, '--double-next']));
 module.exports = {
   transform
 };
