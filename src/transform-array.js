@@ -18,7 +18,7 @@ function transform(arr) {
   if ( Array.isArray(arr)) {
     for (let i = 0; i < arr.length; i++){
       if (arr[i] != '--discard-next' && arr[i] != '--discard-prev' && arr[i] != '--double-next' && arr[i] != '--double-prev'){
-        newArr.push(arr[i]);
+        newArr.push(arr[i]); 
       } else if (arr[i] == '--discard-next'){
         i++;
       } else if (arr[i] == '--discard-prev') {
@@ -44,7 +44,7 @@ function transform(arr) {
     return "'arr' parameter must be an instance of the Array!";
   }
 }
-// console.log(transform([ 5, '--discard-next', 4, '--double-next']));
+
 module.exports = {
   transform
 };
