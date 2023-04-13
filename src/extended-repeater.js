@@ -31,9 +31,7 @@ function repeater(str, options) {
     additionSeparator = options.additionSeparator;
   }
   for (let i=0; i<options.repeatTimes; i++){
-    if (options.repeatTimes === undefined) break;
     for (let j=0; j<options.additionRepeatTimes; j++){
-      if (options.additionRepeatTimes === undefined) break;
       if (j < options.additionRepeatTimes - 1){
         resultInner += options.addition + additionSeparator;
       } else {
