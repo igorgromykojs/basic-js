@@ -16,6 +16,7 @@ function getSeason(/* date */) {
   // remove line with error and write your code here
 }
 
+
 module.exports = {
   getSeason
 };
