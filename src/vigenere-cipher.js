@@ -19,7 +19,22 @@ const { NotImplementedError } = require('../extensions/index.js');
  * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
  * 
  */
+// class VigenereCipheringMachine {
+
+//   encrypt() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+//   decrypt() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+// }
+
 class VigenereCipheringMachine {
+  constructor(key) {
+		this.key = key;
+	}
   encrypt() {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
@@ -29,7 +44,6 @@ class VigenereCipheringMachine {
     // remove line with error and write your code here
   }
 }
-
 module.exports = {
   VigenereCipheringMachine
 };
