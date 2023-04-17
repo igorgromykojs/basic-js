@@ -7,38 +7,48 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 const chainMaker = {
   arr : [],
+  res : "",
+  resres: "",
   getLength() {
     return this.arr.length;
   },
   addLink(value) {
     if (value === undefined) {this.arr.push(''); return this}
-    this.arr.push(`${value}`);
+    this.arr.push(`( ${value} )`);
     return this;
   },
   removeLink(position) {
 
-    if (position > this.arr.length || position < this.arr.length + 1 || !Number.isInteger(position)) {
+    if (position > this.arr.length || position < 1 || !Number.isInteger(position)) {
       let error = new Error("You can't remove incorrect link!");
+      this.arr = [];
       throw error;
     } else {
-      this.arr.splice(position, 1);
+      this.arr.splice(position - 1, 1);
       return this;
     }
   },
   reverseChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    this.arr.reverse();
+    return this;
   },
   finishChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    let result = this.arr.join('~~');
+    this.arr = [];
+    return result;
+    // res = "";
+    // this.arr.forEach(function(item) {
+    //   chainMaker.res+= `( ${item} )~~`;
+    // });
+    // this.arr = [];
+    // chainMaker.resres = chainMaker.res.slice(0, -2);
+    // return chainMaker.resres;
   }
 };
+// console.log(chainMaker.reverseChain().reverseChain().reverseChain().addLink(NaN).reverseChain().addLink(null).addLink(1.233).addLink(true).addLink(false).removeLink(3).addLink(1.233).finishChain());
 
-// chainMaker.addLink(6).addLink(4).addLink().removeLink(6.7);
 
-
-// console.log(chainMaker.arr);
+// console.log(chainMaker);
 
 // const chainMaker = {
 //   getLength() {
